@@ -3,6 +3,7 @@
 #include <QMenuBar>
 #include <QPixmap>
 #include <QAxFactory>
+#include <QTextEdit>
 
 #include "fileopen.xpm"
 #include "filesave.xpm"
@@ -45,9 +46,41 @@ no1::no1(QWidget *parent)
 	connect(action, &QAction::triggered, this, &no1::editUnderline);
 	edit->addAction(action);
 
+		menuBar()->addMenu(file)->setText("&File");
+	menuBar()->addMenu(edit)->setText("&Edit");
+	
+	editor = new QTextEdit(this);
+	setCentralWidget(editor);
+	statusBar();
 }
 
 no1::~no1()
 {
 
 }
+
+void no1::fileOpen()
+{
+	editor->append("file open");
+}
+
+void no1::fileSave()
+{
+	editor->append("file save");
+}
+
+void no1::editNormal()
+{
+	editor->append("edit normal");
+}
+
+void no1::editBold()
+{
+	editor->append("edit bold");
+}
+
+void no1::editUnderline()
+{
+	editor->append("editor underline");
+}
+

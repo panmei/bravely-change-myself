@@ -23,12 +23,6 @@ public slots:
 	void editBold();
 	void editUnderline();
 
-	void editAdvanceFont();
-	void editAdvaceStyle();
-
-	void helpAbout();
-	void helpAboutQt();
-
 private:
 	QTextEdit *editor;
 };
